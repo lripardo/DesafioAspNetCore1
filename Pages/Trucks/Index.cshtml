@@ -1,0 +1,49 @@
+@page
+@model DesafioAspNetCore1.Pages.Trucks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Seus caminhões</h1>
+
+<p>
+    <a asp-page="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck[0].Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck[0].ManufacturingYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck[0].ModelYear)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Truck)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturingYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Ver detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

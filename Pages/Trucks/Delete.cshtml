@@ -1,0 +1,39 @@
+@page
+@model DesafioAspNetCore1.Pages.Trucks.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+
+<h3>Você deseja realmente excluir este caminhão?</h3>
+<div>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.ManufacturingYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.ManufacturingYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.ModelYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.ModelYear)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Truck.ID"/>
+        <input type="submit" value="Excluir" class="btn btn-danger"/> |
+        <a asp-page="./Index">Voltar para caminhões</a>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+@page
+@model DesafioAspNetCore1.Pages.Trucks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do seu caminhão</h1>
+
+<div>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.ManufacturingYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.ManufacturingYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Truck.ModelYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Truck.ModelYear)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Truck.ID">Editar caminhão</a> |
+    <a asp-page="./Index">Voltar para caminhões</a>
+</div>
