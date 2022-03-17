@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesafioAspNetCore1.Models;
 
@@ -9,7 +8,7 @@ public class CurrentYear : ValidationAttribute
     {
         try
         {
-            int year = Convert.ToInt32(value);
+            var year = Convert.ToInt32(value);
             return year == DateTime.Now.Year;
         }
         catch
@@ -25,8 +24,8 @@ public class CurrentYearOrSubsequent : ValidationAttribute
     {
         try
         {
-            int year = Convert.ToInt32(value);
-            int current = DateTime.Now.Year;
+            var year = Convert.ToInt32(value);
+            var current = DateTime.Now.Year;
             return year >= current && year <= current + 1;
         }
         catch
