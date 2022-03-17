@@ -38,4 +38,22 @@ public class TruckTest
             Assert.False(currentYearOrSubsequentValidator.IsValid(year));
         }
     }
+
+    [Fact]
+    public void ModelAllowedTest()
+    {
+        var modelAllowedValidator = new ModelAllowed();
+        var validModels = new[] {"FM", "FH"};
+        var invalidModels = new[] {"", "Other", "M", "MyModel"};
+
+        foreach (var year in validModels)
+        {
+            Assert.True(modelAllowedValidator.IsValid(year));
+        }
+
+        foreach (var year in invalidModels)
+        {
+            Assert.False(modelAllowedValidator.IsValid(year));
+        }
+    }
 }
