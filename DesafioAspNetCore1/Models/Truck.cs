@@ -12,7 +12,7 @@ public class CurrentYear : ValidationAttribute
             int year = Convert.ToInt32(value);
             return year == DateTime.Now.Year;
         }
-        catch (Exception e)
+        catch
         {
             return false;
         }
@@ -29,7 +29,7 @@ public class CurrentYearOrSubsequent : ValidationAttribute
             int current = DateTime.Now.Year;
             return year >= current && year <= current + 1;
         }
-        catch (Exception e)
+        catch
         {
             return false;
         }
@@ -56,7 +56,7 @@ public class Truck
     [Required(ErrorMessage = "O campo Modelo é obrigatório")]
     [ModelAllowed(ErrorMessage = "O modelo deve ser do tipo FH ou FM")]
     [Display(Name = "Modelo")]
-    public string Model { get; set; }
+    public string Model { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "O campo Ano de fabricação é obrigatório")]
     [CurrentYear(ErrorMessage = "O ano de fabricação deve ser igual ao ano atual")]
