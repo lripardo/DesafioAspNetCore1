@@ -1,3 +1,4 @@
+using DesafioAspNetCore1.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,5 +17,13 @@ public class TruckPageTest
         Options = new DbContextOptionsBuilder<RazorPagesTruckContext>()
             .UseInMemoryDatabase("InMemoryDb")
             .UseInternalServiceProvider(serviceProvider).Options;
+    }
+
+    protected Truck AddTruckOnDatabase(RazorPagesTruckContext db)
+    {
+        var truck = new Truck(200);
+        db.Truck.Add(truck);
+        db.SaveChanges();
+        return truck;
     }
 }

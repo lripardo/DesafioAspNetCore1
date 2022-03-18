@@ -10,14 +10,6 @@ namespace DesafioAspNetCore1.Tests;
 
 public class TruckDeletePageTest : TruckPageTest
 {
-    private Truck AddTruckOnDatabase(RazorPagesTruckContext db)
-    {
-        var truck = new Truck(200);
-        db.Truck.Add(truck);
-        db.SaveChanges();
-        return truck;
-    }
-
     [Fact]
     public async Task OnGetAsyncTest()
     {
