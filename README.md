@@ -66,7 +66,19 @@ Os processos de exclusão, edição e visualização são autoexplicativos no am
 
 ## Testes unitários
 
-O seguinte comando irá executar os testes e salvar um arquivo de cobertura:
+O seguinte comando irá executar os testes:
+
+```
+dotnet test
+```
+
+Para gerar um relatório visual, é necessário instalar a ferramenta reportgenerator.
+
+```
+dotnet tool install -g dotnet-reportgenerator-globaltool
+```
+
+O seguinte comando irá executar os testes e salvar os resultados em um arquivo de cobertura:
 
 ```
 dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
@@ -74,9 +86,10 @@ dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
 
 Após isso, um arquivo de cobertura será gerado na pasta DesafioAspNetCore1.Tests/TestResults. Copie o GUID da pasta que
 foi gerada, verifique se dentro dela há um arquivo chamado coverage.cobertura.xml. Caso o arquivo exista, execute o
-pŕoximo comando substituindo o {GUID} pelo seu real GUID que foi gerado pelo comando anterior.
+próximo comando substituindo o {GUID} pelo seu real GUID que foi gerado pelo comando anterior.
 
 ```
+# OBS: Comando pwd UNIX, substitua pelo caminho completo do projeto se for o caso
 reportgenerator -reports:"$(pwd)/DesafioAspNetCore1.Tests/TestResults/{guid}/coverage.cobertura.xml" -targetdir:"$(pwd)/DesafioAspNetCore1.Tests/TestResults/Report" -reporttypes:Html
 ```
 
