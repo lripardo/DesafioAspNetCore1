@@ -20,8 +20,7 @@ namespace DesafioAspNetCore1.Pages.Trucks
             _context = context;
         }
 
-        [BindProperty]
-        public Truck Truck { get; set; }
+        [BindProperty] public Truck Truck { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +35,7 @@ namespace DesafioAspNetCore1.Pages.Trucks
             {
                 return NotFound();
             }
+
             return Page();
         }
 
@@ -60,10 +60,8 @@ namespace DesafioAspNetCore1.Pages.Trucks
                 {
                     return NotFound();
                 }
-                else
-                {
-                    throw;
-                }
+
+                throw;
             }
 
             return RedirectToPage("./Index");
