@@ -71,11 +71,12 @@ public class Truck
     {
     }
 
-    public Truck(int id, string model, int manufacturingYear, int modelYear)
+    public Truck(int id)
     {
+        var year = DateTime.Now.Year;
         ID = id;
-        Model = model;
-        ManufacturingYear = manufacturingYear;
-        ModelYear = modelYear;
+        Model = "FH";
+        ManufacturingYear = year;
+        ModelYear = year;
     }
 }

@@ -48,8 +48,7 @@ public class TruckCreatePageTest : TruckPageTest
         var db = new RazorPagesTruckContext(Options);
         var mockPageRequest = new MockPageRequest();
 
-        var currentYear = DateTime.Now.Year;
-        var truck = new Truck(0, "FH", currentYear, currentYear);
+        var truck = new Truck(0);
 
         var pageModel = new CreateModel(db)
         {
