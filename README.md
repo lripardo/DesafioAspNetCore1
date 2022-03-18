@@ -66,6 +66,23 @@ Os processos de exclusão, edição e visualização são autoexplicativos no am
 
 ## Testes unitários
 
+O seguinte comando irá executar os testes e salvar um arquivo de cobertura:
+
+```
+dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+```
+
+Após isso, um arquivo de cobertura será gerado na pasta DesafioAspNetCore1.Tests/TestResults. Copie o GUID da pasta que
+foi gerada, verifique se dentro dela há um arquivo chamado coverage.cobertura.xml. Caso o arquivo exista, execute o
+pŕoximo comando substituindo o {GUID} pelo seu real GUID que foi gerado pelo comando anterior.
+
+```
+reportgenerator -reports:"$(pwd)/DesafioAspNetCore1.Tests/TestResults/{guid}/coverage.cobertura.xml" -targetdir:"$(pwd)/DesafioAspNetCore1.Tests/TestResults/Report" -reporttypes:Html
+```
+
+Será gerado dentro da pasta Report um arquivo chamado index.html, abra e veja o relatório completo de cobertura. Este
+relatório se parecerá com esse:
+![alt coverage](Images/coverage.png)
 
 ## Principais ferramentas e tecnologias
 
