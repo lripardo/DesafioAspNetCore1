@@ -2,7 +2,8 @@
 
 ## Sobre
 
-O objetivo deste projeto foi desenvolver um app web com ASP.NET Core que tinham como requisitos principais:
+O objetivo deste projeto foi desenvolver um app web de gerenciamento de caminhões com ASP.NET Core que tinham como
+requisitos principais:
 
 - Visualizar os caminhões cadastrados;
     - As propriedades mínimas do caminhão deverão ser:
@@ -65,6 +66,7 @@ Os processos de exclusão, edição e visualização são autoexplicativos no am
 
 ## Testes unitários
 
+
 ## Principais ferramentas e tecnologias
 
 - Ubuntu 20.04.4 LTS
@@ -76,8 +78,26 @@ Os processos de exclusão, edição e visualização são autoexplicativos no am
 - NuGet
 - Coverlet
 
-## Observações
+## Outros
 
-- Controle dos arquivos versionados com [.gitignore](.gitignore)
 - Assinatura de commits com GPG
 - Commit Semântico
+- Migração automática no início do app
+- Os validadores da classe [Truck](DesafioAspNetCore1/Models/Truck.cs) foram customizados herdando da
+  classe [ValidationAttribute](https://docs.microsoft.com/pt-br/dotnet/api/system.componentmodel.dataannotations.validationattribute?view=net-6.0)
+- Controle dos arquivos versionados com [.gitignore](.gitignore)
+
+```
+# Para criar o arquivo padrão do .NET
+dotnet new gitignore
+```
+
+- Comandos de migração
+
+```
+dotnet ef migrations add NomeDaMigracao
+```
+
+```
+dotnet ef database update
+```
