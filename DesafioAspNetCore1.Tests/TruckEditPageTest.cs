@@ -81,6 +81,6 @@ public class TruckEditPageTest : TruckPageTest
         var editedTruck = db.Truck.FirstOrDefault(t => t.ID == truck.ID);
         Assert.NotNull(editedTruck);
         
-        Assert.True(editedTruck.Model == truck.Model && editedTruck.ModelYear == truck.ModelYear);
+        Assert.True(editedTruck?.Model == truck.Model && editedTruck.ModelYear == truck.ModelYear);
     }
 }
