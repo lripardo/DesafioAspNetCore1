@@ -21,16 +21,53 @@ Requisitos secundários:
 - Utilizar ASP.NET Core;
 - Utilizar base de dados local;
 - Utilizar ORM para mapear as tabelas de base de dados
-  - Utilizar “Migrations” para criação da base de dados;
-  - A criação da base de dados deverá ser automática (sem a necessidade de utilizar algum comando adicional).
+    - Utilizar “Migrations” para criação da base de dados;
+    - A criação da base de dados deverá ser automática (sem a necessidade de utilizar algum comando adicional).
 - Criar testes unitários (Cobrir ao menos 80% dos fluxos)
 
 ## Execução
 
-Todo o projeto está baseado no .NET 6.0.
+Todo o projeto está baseado no [.NET 6.0](https://docs.microsoft.com/pt-br/dotnet/core/install). Também é necessário o
+terminal [Git](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+com SSH configurado para fazer o clone do projeto.
+
+```
+git clone git@github.com:lripardo/DesafioAspNetCore1.git
+```
+
+```
+cd DesafioAspNetCore1
+```
+
+Para executar a aplicação:
+
+```
+dotnet run --project DesafioAspNetCore1
+```
+
+O servidor irá abrir por padrão em <http://localhost:5213> ou no link em que o console indicar.
+
+Após abrir o link, esta será a página inicial:
+
+![alt home](Images/home.png)
+
+No menu do topo, clique em [Criar](http://localhost:5213/Trucks/Create) para adicionar um caminhão no banco de dados.
+
+![alt create](Images/create.png)
+
+As validações estão aplicadas de acordo com os requisitos então preencha todos os campos corretamente e clique no
+botão "Criar". Após o processo você será redirecionado para a lista de caminhões onde poderá ver o seu recém cadastrado
+veículo.
+
+![alt create_and_list](Images/saved_and_list.png)
+
+Os processos de exclusão, edição e visualização são autoexplicativos no ambiente.
+
+## Testes unitários
 
 ## Principais ferramentas e tecnologias
 
+- Ubuntu 20.04.4 LTS
 - .NET 6.0
 - Entity Framework
 - SQLite
@@ -39,8 +76,8 @@ Todo o projeto está baseado no .NET 6.0.
 - NuGet
 - Coverlet
 
-## Boas práticas e observações
+## Observações
 
-- Versionar apenas os arquivos necessários (.gitignore)
+- Controle dos arquivos versionados com [.gitignore](.gitignore)
 - Assinatura de commits com GPG
 - Commit Semântico
