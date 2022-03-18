@@ -1,5 +1,6 @@
 #nullable disable
 using Microsoft.EntityFrameworkCore;
+using DesafioAspNetCore1.Models;
 
 public class RazorPagesTruckContext : DbContext
 {
@@ -8,5 +9,5 @@ public class RazorPagesTruckContext : DbContext
     {
     }
 
-    public DbSet<DesafioAspNetCore1.Models.Truck> Truck { get; set; }
+    public DbSet<Truck> Truck { get; set; }
 }

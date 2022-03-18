@@ -66,4 +66,16 @@ public class Truck
     [CurrentYearOrSubsequent(ErrorMessage = "O ano do modelo deve ser igual ao ano atual ou igual ao ano que vem")]
     [Display(Name = "Ano do modelo")]
     public int ModelYear { get; set; }
+
+    public Truck()
+    {
+    }
+
+    public Truck(int id, string model, int manufacturingYear, int modelYear)
+    {
+        ID = id;
+        Model = model;
+        ManufacturingYear = manufacturingYear;
+        ModelYear = modelYear;
+    }
 }

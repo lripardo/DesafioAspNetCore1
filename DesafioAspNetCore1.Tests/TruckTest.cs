@@ -44,7 +44,7 @@ public class TruckTest
     {
         var modelAllowedValidator = new ModelAllowed();
         var validModels = new[] {"FM", "FH"};
-        var invalidModels = new[] {"", "Other", "M", "MyModel"};
+        var invalidModels = new[] {"", "Other", "M", "MyModel", null};
 
         foreach (var year in validModels)
         {
